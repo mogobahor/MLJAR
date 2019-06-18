@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+    postgres:
+        restart: always
+        image: postgres:9.5.6-alpine
+        volumes:
+          - ./docker/postgres/data:/var/lib/postgresql
+        ports:
+            - 5433:5432
+        expose:
+            - 5432
+        environment:
+            FILLA_DB_USER: mljar_user
+            FILLA_DB_PASSWORD: secret_password
+            FILLA_DB_DATABASE: mljar_db
+            POSTGRES_USER: postgres
+        volumes:
+            - ./docker/postgres/init-user-db.sh:/docker-entrypoint-initdb.d/init-user-db.sh
+    wsgiserver:
+        extends:
+            file: docker-common.yml
+            service: backend
+        entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+        volumes:
+            - static_volume:/app/backend/server/django_static
+        links:
+            - postgres
+        expose:
+            - 8000
+volumes:
+    static_volume: {}

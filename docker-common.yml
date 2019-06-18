@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+    backend:
+        restart: always
+        build:
+            context: .
+            dockerfile: ./docker/backend/Dockerfile
+        volumes:
+            - .:/app
+        environment:
+            DATABASE_URL: postgres
+            DATABASE_NAME: mljar_db
+            DATABASE_USER: mljar_user
+            DATABASE_PASS: secret_password
+            DATABASE_PORT: 5432
+            REDIS_URL: redis
+            BROKER_URL: rabbitmq
+            DJANGO_DEBUG: 'true'

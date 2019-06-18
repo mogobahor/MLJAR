@@ -1,0 +1,1 @@
+export const NODE_SELECTED = "NODE_SELECTED";
