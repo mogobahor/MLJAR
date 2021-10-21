@@ -8,7 +8,7 @@ async-timeout==3.0.1
 attrs==18.2.0
 autobahn==19.2.1
 Automat==0.7.0
-Babel==2.6.0
+Babel==2.9.1
 billiard==3.5.0.4
 black==18.9b0
 celery==4.2.1
