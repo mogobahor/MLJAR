@@ -11,7 +11,7 @@ Automat==0.7.0
 Babel==2.6.0
 billiard==3.5.0.4
 black==18.9b0
-celery==4.2.1
+celery==5.2.2
 certifi==2018.10.15
 cffi==1.12.2
 channels==2.1.7
