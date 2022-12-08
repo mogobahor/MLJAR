@@ -12,7 +12,7 @@ Babel==2.6.0
 billiard==3.5.0.4
 black==18.9b0
 celery==4.2.1
-certifi==2018.10.15
+certifi==2022.12.7
 cffi==1.12.2
 channels==2.1.7
 chardet==3.0.4
